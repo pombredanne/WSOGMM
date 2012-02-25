@@ -2,7 +2,7 @@
 
 Maybe this project would be more aptly named a
 [MeltingPot](http://en.wikipedia.org/wiki/Melting_pot) or a
-[SaladBowl](http://en.wikipedia.org/wiki/Salad_bowl_(cultural_idea)) or
+[SaladBowl]"http://en.wikipedia.org/wiki/Salad_bowl_(cultural_idea)" or
 something?  I decided to call it a 
 [Whole Sort Of General Mish Mash](http://hitchhikers.wikia.com/wiki/Whole_Sort_of_General_Mish_Mash)
 after the concept in 
