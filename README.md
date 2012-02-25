@@ -16,8 +16,8 @@ Everything here is released under the terms and conditions of [The MIT
 License][5].  Please see the license.txt file for more details.
 
 ## References
-[1] http://en.wikipedia.org/wiki/Melting_pot "Wikipedia entry for Melting Pot"
-[2] http://en.wikipedia.org/wiki/Salad_bowl_(cultural_idea) "Wikipedia entry for Salad Bowl"
-[3] http://hitchhikers.wikia.com/wiki/WSOGMM "Definition of WSOGMM - Hitchhiker Wiki"
-[4] http://en.wikipedia.org/wiki/Hitchikers_guide_to_the_galaxy "Wikipedia entry for Hitchhiker's Guide To The Galaxy"
-[5] http://www.opensource.org/licenses/mit-license.php "The MIT License"
+[1]: http://en.wikipedia.org/wiki/Melting_pot "Wikipedia entry for Melting Pot"
+[2]: http://en.wikipedia.org/wiki/Salad_bowl_(cultural_idea) "Wikipedia entry for Salad Bowl"
+[3]: http://hitchhikers.wikia.com/wiki/WSOGMM "Definition of WSOGMM - Hitchhiker Wiki"
+[4]: http://en.wikipedia.org/wiki/Hitchikers_guide_to_the_galaxy "Wikipedia entry for Hitchhiker's Guide To The Galaxy"
+[5]: http://www.opensource.org/licenses/mit-license.php "The MIT License"
