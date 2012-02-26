@@ -38,23 +38,28 @@ FILE_PREFIX = 'backup'
 
 def archive(file_or_dir, backup_file, log_file):
     """Archive specified file or directory to specified backup file."""
-    backup_file_stem, backup_file_ext = os.path.splitext(os.path.basename(backup_file))
-    # NB: could use shutil.make_archive() but this doesn't utilise the transform feature
-    command = ['tar','-uf',backup_file,'--transform','\'s,^,{0:s},S\''.format(backup_file_stem),file_or_dir]
-    subprocess.call(command,stdout=log_file,stderr=log_file)
+    # NB: could use shutil.make_archive() but prefer making a system call
+    command = ['tar','-uf',backup_file,file_or_dir]
+    call(command,log_file)
     
 def archive_db(db, backup_file, log_file):
     """Archive specified database to specified backup file."""
     sql_file = os.path.join(TMP_DIR,'{0:s}.sql'.format(db))
     # NB: works for InnoDB type tables, for MyISAM type tables use '-l' instead of '--single-transaction'
     command = ['mysqldump','--add-drop-database','--single-transaction','-u{0:s}'.format(DB_USER),'-p{0:s}'.format(DB_PSWD),db,'-r{0:s}'.format(sql_file)]
-    subprocess.call(command,stdout=log_file,stderr=log_file)
+    call(command,log_file,False)
     archive(sql_file,backup_file,log_file)
     os.remove(sql_file)
 
 def compress(backup_file, log_file):
     """Compress specified backup file."""
     command = ['gzip','-q','--best',backup_file]
+    call(command,log_file)
+
+def call(command, log_file, log=True):
+    """Make a system call with the specified command."""
+    if log:
+        subprocess.call(['echo','COMMAND:']+command,stdout=log_file,stderr=log_file)
     subprocess.call(command,stdout=log_file,stderr=log_file)
 
 if (__name__=='__main__'):
@@ -85,5 +90,8 @@ if (__name__=='__main__'):
     compress(backup_file, log_file)
 
     # move files to current directory
-    shutil.move(backup_file,os.getcwd())
+    shutil.move('{0:s}.gz'.format(backup_file),os.getcwd())
     shutil.move(log_file,os.getcwd())
+
+    # clean up
+    log_file.close()
