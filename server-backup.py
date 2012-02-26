@@ -89,9 +89,10 @@ if (__name__=='__main__'):
     # compress archive
     compress(backup_file, log_file)
 
-    # move files to current directory
-    shutil.move('{0:s}.gz'.format(backup_file),os.getcwd())
-    shutil.move(log_file,os.getcwd())
-
     # clean up
     log_file.close()
+
+    # move files to current directory
+    shutil.move('{0:s}.gz'.format(backup_file),os.getcwd())
+    shutil.move(log_file.name,os.getcwd())
+
