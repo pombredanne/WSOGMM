@@ -56,11 +56,11 @@ def archive_db(db, backup_file, log_file):
         'mysqldump',
         '--add-drop-database',
         '--single-transaction',
-        '-h {0:s}'.format(DB_HOST),
-        '-u {0:s}'.format(DB_USER),
-        '-p {0:s}'.format(DB_PSWD),
+        '-h{0:s}'.format(DB_HOST),
+        '-u{0:s}'.format(DB_USER),
+        '-p{0:s}'.format(DB_PSWD),
         db,
-        '-r {0:s}'.format(sql_file)
+        '-r{0:s}'.format(sql_file)
     ]
     call(command, log_file, False)
     archive(sql_file, backup_file, log_file)
